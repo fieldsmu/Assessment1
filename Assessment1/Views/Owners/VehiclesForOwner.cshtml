@@ -1,0 +1,28 @@
+﻿@model Assessment1.ViewModels.VehiclesForOwner
+@{
+    ViewBag.Title = "VehiclesForOwner";
+}
+
+<h2>Vehicles For @Model.Owner.Name</h2>
+
+<table class="table">
+    <tr>
+        <th>Vin</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+    </tr>
+@foreach (var vehicle in Model.Vehicles) {
+    <tr>
+        <td>@vehicle.Vin</td>
+        <td>@vehicle.Make</td>
+        <td>@vehicle.Model</td>
+        <td>@vehicle.Year</td>
+    </tr>
+}
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
